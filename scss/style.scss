@@ -34,7 +34,6 @@ p {
 
 .wrapper {
     padding: 16px $wrapperSidePadding 96px;
-    max-width: 1440px;
     min-width: 375px;
     margin: 0 auto;
 }
@@ -136,7 +135,7 @@ p {
     .catalog-item {
         padding: 0 8px;
         margin-bottom: 16px;
-        flex: 0 1 16.666%;
+        flex: 0 1 236px;
 
         .catalog-body {
             -webkit-border-radius: 10px;
@@ -186,6 +185,9 @@ p {
             color: #545454;
         }
 
+        @media (max-width: 1448px) {
+            flex: 0 1 16.666%;
+        }
         @media (max-width: 1199px) {
             flex: 0 1 20%;
         }
@@ -233,7 +235,6 @@ p {
         @media (max-width: $break-sm) {
             border: none;
             position: relative;
-            margin: 0;
             margin: 0 #{"-" + $wrapperSidePadding} 16px #{"-" + $wrapperSidePadding};
             &::before {
                 content: "";
@@ -253,7 +254,6 @@ p {
     }
 
     .description {
-        flex: 0 1 1084px;
         color: #000;
     }
 
