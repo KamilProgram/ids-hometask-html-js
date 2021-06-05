@@ -417,7 +417,7 @@ p {
   .details .details-img {
     border: none;
     position: relative;
-    margin: 0 -24px 16px -24px;
+    margin: 0 -24px 16px;
   }
   .details .details-img::before {
     content: "";

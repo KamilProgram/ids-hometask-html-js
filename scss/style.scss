@@ -234,7 +234,8 @@ p {
         @media (max-width: $break-sm) {
             border: none;
             position: relative;
-            margin: 0 #{"-" + $wrapperSidePadding} 16px #{"-" + $wrapperSidePadding};
+            margin: 0 -1 * $wrapperSidePadding 16px;
+
             &::before {
                 content: "";
                 position: absolute;
