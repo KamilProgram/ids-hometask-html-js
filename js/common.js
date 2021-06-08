@@ -11,10 +11,10 @@ export const addEventCounter = (nodeHtml) => {
     const addBtn = nodeHtml.querySelector(".plus-btn");
     const inputCount = nodeHtml.querySelector('#countValue');
 
-    subBtn.onclick = () => {
+    subBtn.onclick = (e) => {
         if (inputCount.value > 0) inputCount.value--;
     }
-    addBtn.onclick = () => {
+    addBtn.onclick = (e) => {
         if (inputCount.value < 100) inputCount.value++;
     }
 }

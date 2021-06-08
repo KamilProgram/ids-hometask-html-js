@@ -16,17 +16,17 @@ const getItemSection = (data) => {
                         <span class="price">${data.price.currency === 'USD' ? '$' : ''}${data.price.value}</span>
                         
                         <div class="quantity">
-                            <button class="minus-btn"><img class="icon-img" src="./img/remove.svg" alt="add" /> </button>
+                            <button  type="button" class="minus-btn"><img class="icon-img" src="./img/remove.svg" alt="add" /> </button>
                             <input id="countValue" type="text" value="1">
-                            <button class="plus-btn" type="submit" > <img class="icon-img" src="./img/add.svg" alt="add" /> </button>
+                            <button type="button" class="plus-btn" > <img class="icon-img" src="./img/add.svg" alt="add" /> </button>
                         </div>
                         
                         <div class="add-btn">
-                            <button> Add to cart </button>
+                            <button disabled  type="submit"> Add to cart </button>
                         </div>
 
                         <div class="add-to-favorite">
-                            <button class="favorite-btn ${data.like ? 'active' : ''}"></button>
+                            <button  type="button" class="favorite-btn ${data.like ? 'active' : ''}"></button>
                         </div>
                     </form>
                 </div>`

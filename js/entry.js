@@ -41,7 +41,7 @@ const findItems = (e) => {
 }
 
 const init = () => {
-    let formSearch = document.getElementById('form');
+    let formSearch = document.getElementById('search-form');
     formSearch.addEventListener('submit', findItems);
     addEventListener('hashchange', handleHash);
     handleHash();
