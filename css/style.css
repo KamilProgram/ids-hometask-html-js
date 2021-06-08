@@ -313,6 +313,7 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   color: #323232;
+  text-align: center;
 }
 
 .catalog .catalog-item .price {
