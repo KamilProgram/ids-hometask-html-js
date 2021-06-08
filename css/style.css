@@ -127,7 +127,7 @@ p {
   height: 24px;
 }
 
-.icon-favorite {
+.favorite-btn {
   display: block;
   width: 24px;
   height: 24px;
@@ -137,7 +137,7 @@ p {
   cursor: pointer;
 }
 
-.icon-favorite:hover, .icon-favorite.active {
+.favorite-btn:hover, .favorite-btn.active {
   background: url(../img/favorite.svg) center no-repeat;
 }
 
@@ -272,7 +272,7 @@ p {
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.catalog .catalog-item .offset-controls {
+.catalog .catalog-item .add-to-favorite {
   padding: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,8 +297,6 @@ p {
 }
 
 .catalog .catalog-item .item-img img {
-  width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -520,7 +518,7 @@ p {
   .details .add-to-card .price,
   .details .add-to-card .quantity,
   .details .add-to-card .add-btn,
-  .details .add-to-card .offset-controls {
+  .details .add-to-card .add-to-favorite {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
@@ -551,7 +549,7 @@ p {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .details .add-to-card .offset-controls {
+  .details .add-to-card .add-to-favorite {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;

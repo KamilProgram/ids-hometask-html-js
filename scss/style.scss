@@ -42,7 +42,7 @@ p {
     height: 24px;
 }
 
-.icon-favorite {
+.favorite-btn {
     display: block;
     width: 24px;
     height: 24px;
@@ -150,7 +150,7 @@ p {
             }
         }
 
-        .offset-controls {
+        .add-to-favorite {
             padding: 8px;
             display: flex;
             justify-content: flex-end;
@@ -162,8 +162,6 @@ p {
             justify-content: center;
             margin-bottom: 8px;
             img {
-                width: 100%;
-                height: 100%;
                 object-fit: cover;
             }
         }
@@ -333,7 +331,7 @@ p {
             .price,
             .quantity,
             .add-btn,
-            .offset-controls {
+            .add-to-favorite {
                 flex: 0 1 50%;
                 margin: 0;
                 margin-bottom: 16px;
@@ -353,7 +351,7 @@ p {
                 display: flex;
                 justify-content: flex-end;
             }
-            .offset-controls {
+            .add-to-favorite {
                 order: 2;
                 display: flex;
                 justify-content: flex-end;
