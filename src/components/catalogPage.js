@@ -1,6 +1,6 @@
 
-import { baseUrl, API } from "./api.js";
-import { addEventFavorite } from "./common.js";
+import { baseUrl, API } from "../api.js";
+import { addEventFavorite } from "../utils.js";
 
 const getItemCard = (data) => {
     const item = document.createElement('div');

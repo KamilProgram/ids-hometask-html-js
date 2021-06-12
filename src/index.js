@@ -1,10 +1,13 @@
-import catalogPage from "./catalogPage.js";
-import { redirect } from "./common.js";
-import itemPage from "./itemPage.js";
+//import 'reset-css'
 
+import './scss/style.scss'
+import catalogPage from "./components/catalogPage.js";
+import itemPage from "./components/itemPage.js";
+
+import { redirect, debounce } from "./utils.js";
 
 export const updadtePage = (html) => {
-    let render = document.getElementById('render');
+    let render = document.getElementById('root');
     render.innerHTML = '';
     render.append(html);
 }
@@ -24,6 +27,7 @@ const handleHash = () => {
     switch (route.name) {
         case 'catalog':
             catalogPage(route.params).then(html => updadtePage(html));
+
             break
 
         case 'item':
@@ -34,15 +38,16 @@ const handleHash = () => {
     }
 }
 
-const findItems = (e) => {
-    e.preventDefault();
-    let input = document.getElementById('text-to-find');
-    redirect('catalog', input.value);
+const setSearchFormHandler = () => {
+    let inputFind = document.getElementById('text-to-find');
+    inputFind.addEventListener(
+        "keyup",
+        debounce(() => redirect('catalog', inputFind.value), 200)
+    );
 }
 
 const init = () => {
-    let formSearch = document.getElementById('search-form');
-    formSearch.addEventListener('submit', findItems);
+    setSearchFormHandler();
     addEventListener('hashchange', handleHash);
     handleHash();
 }
