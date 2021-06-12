@@ -1,5 +1,5 @@
-import { baseUrl, API } from "./api.js";
-import { addEventCounter, addEventFavorite } from "./common.js";
+import { baseUrl, API } from "../api.js";
+import { addEventCounter, addEventFavorite } from "../utils.js";
 
 const getItemSection = (data) => {
     const item = document.createElement('section');
@@ -16,9 +16,9 @@ const getItemSection = (data) => {
                         <span class="price">${data.price.currency === 'USD' ? '$' : ''}${data.price.value}</span>
                         
                         <div class="quantity">
-                            <button  type="button" class="minus-btn"><img class="icon-img" src="./img/remove.svg" alt="add" /> </button>
+                            <button  type="button" class="minus-btn"><img class="icon-img" src="./icons/remove.svg" alt="add" /> </button>
                             <input id="countValue" type="text" value="1">
-                            <button type="button" class="plus-btn" > <img class="icon-img" src="./img/add.svg" alt="add" /> </button>
+                            <button type="button" class="plus-btn" > <img class="icon-img" src="./icons/add.svg" alt="add" /> </button>
                         </div>
                         
                         <div class="add-btn">
