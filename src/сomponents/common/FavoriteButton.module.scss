@@ -1,0 +1,18 @@
+.favoriteButton {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/assets/icons/favorite_border.svg) center no-repeat;
+    transition: background 0.3s ease;
+    cursor: pointer;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: url(/assets/icons/favorite.svg) center no-repeat;
+        }
+    }
+}
+
+.active {
+    background: url(/assets/icons/favorite.svg) center no-repeat;
+}
