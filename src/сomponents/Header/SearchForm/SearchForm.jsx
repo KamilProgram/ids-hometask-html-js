@@ -1,8 +1,7 @@
 import { Component } from "react";
-import { withRouter } from "react-router-dom";
 import styles from "./SearchForm.module.scss"
 
-class SearchForm extends Component {
+export class SearchForm extends Component {
     state = {
         searchInput: ''
     }
@@ -35,5 +34,3 @@ class SearchForm extends Component {
         </div>
     }
 }
-
-export default withRouter(SearchForm);

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import SearchForm from "./SearchForm/SearchForm";
+import { SearchForm } from "./SearchForm/SearchForm";
 import { Menu } from "./Menu/Menu";
 import styles from "./Header.module.scss"
 
