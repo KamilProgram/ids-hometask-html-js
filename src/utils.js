@@ -22,3 +22,11 @@ export const addEventCounter = (nodeHtml) => {
 export const redirect = (url, searchParam) => {
     document.location.href = `#${url}${searchParam ? '?' + searchParam : ''}`;
 }
+
+export const debounce = (callback, delay) => {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(callback, delay);
+    }
+}
