@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/style.css">
     <title>Catalog</title>
 </head>
@@ -12,10 +11,10 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="search">
-                <input type="text" placeholder="Search products" />
-                <button></button>
-            </div>
+            <form class="search" id="search-form">
+                <input id="text-to-find" type="text" placeholder="Search products" />
+                <button type="submit"></button>
+            </form>
 
             <ul class="menu">
                 <li class="menu-item">
@@ -27,166 +26,12 @@
             </ul>
         </header>
 
-        <section class="catalog">
+        <div id="render">
+            <!-- сюда будут вставлятся страницы -->
+        </div>
 
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <div class="catalog-body">
-                    <div class="add-to-favorite">
-                        <button class="favorite-btn"></button>
-                    </div>
-                    <a href="detailed-page.html">
-                        <div class="item-img">
-                            <img src="./img/google-home-sm.png" alt="google-home" />
-                        </div>
-                        <div class="item-lable">
-                            G Home
-                        </div>
-                        <span class="price">$129</span>
-                    </a>
-                </div>
-            </div>
-
-
-
-        </section>
     </div>
 </body>
-<script src="js/script.js"></script>
+<script type="module" src="js/entry.js"></script>
 
 </html>
