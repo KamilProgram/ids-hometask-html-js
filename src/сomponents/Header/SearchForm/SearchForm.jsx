@@ -8,7 +8,7 @@ export class SearchForm extends Component {
 
     setSearchInput = (text) => {
         this.setState(() => {
-            return { findInput: text }
+            return { searchInput: text }
         })
     }
 
