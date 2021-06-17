@@ -1,0 +1,10 @@
+.menu {
+    display: flex;
+    li svg {
+        width: 24px;
+        height: 24px;
+        margin-left: 16px;
+        cursor: pointer;
+        fill: #323232;
+    }
+}
