@@ -21,9 +21,14 @@ class CatalogPage extends Component {
         });
     }
 
+    getSearchParams = () => {
+        let searchParam = this.props.location.search;
+        return decodeURIComponent(searchParam.slice(1));
+    }
+
     render() {
         let items = this.state.items;
-        const searchParam = this.props.match.params.filter;
+        const searchParam = this.getSearchParams();
 
         if (searchParam && items) {
             let reg = new RegExp(searchParam, 'i');

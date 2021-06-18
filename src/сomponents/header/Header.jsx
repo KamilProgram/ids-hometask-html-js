@@ -5,7 +5,7 @@ import s from "./index.module.scss"
 
 class Header extends Component {
     search = (text) => {
-        const path = `/catalog/${text}`;
+        const path = `/catalog?${text}`;
         this.props.history.push(path);
     }
 

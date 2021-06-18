@@ -5,6 +5,7 @@ import s from "./index.module.scss";
 
 class ItemPreview extends Component {
     render() {
+
         return <div className={s.item}>
             <div className={s.body}>
 
