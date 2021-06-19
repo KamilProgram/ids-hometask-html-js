@@ -1,39 +1,34 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import s from "./index.module.scss"
 import icons from "../../../assets/icons-sprite.svg"
 import { debounce } from "../../../utils/debounce";
 
 
-export class SearchForm extends Component {
-    state = {
-        searchInput: ''
+const SearchForm = ({ searchFunction }) => {
+
+    const [searchInput, setSearchInput] = useState('')
+
+    const onChangeSearchInput = (value) => {
+        setSearchInput(value);
+        search();
     }
 
-    setSearchInput = (text) => {
-        this.setState(() => {
-            return { searchInput: text }
-        })
-    }
+    const search = debounce(() => searchFunction(searchInput), 1000);
 
-    onChangeSearchInput = (value) => {
-        this.setSearchInput(value);
-        this.search();
-    }
 
-    search = debounce(() => this.props.searchFunction(this.state.searchInput), 1000);
+    return <div className={s.search} id="search-form">
+        <input id="text-to-find" type="text"
+            onChange={(e) => onChangeSearchInput(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') search() }}
+            placeholder="Search products"
+            value={searchInput} />
 
-    render() {
-
-        return <div className={s.search} id="search-form">
-            <input id="text-to-find" type="text"
-                onChange={(e) => this.onChangeSearchInput(e.target.value)}
-                value={this.state.searchInput}
-                placeholder="Search products" />
-            <button>
-                <svg>
-                    <use xlinkHref={`${icons}#search`} />
-                </svg>
-            </button>
-        </div>
-    }
+        <button onClick={() => search()}>
+            <svg>
+                <use xlinkHref={`${icons}#search`} />
+            </svg>
+        </button>
+    </div>
 }
+
+export default SearchForm;
