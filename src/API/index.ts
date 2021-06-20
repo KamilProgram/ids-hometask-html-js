@@ -37,27 +37,3 @@ export enum HTTP_STATUS {
   BadRequest = 400,
   NotFound = 404,
 }
-
-
-
-
-
-/* import *as axios from "axios";
-
-export const baseURL = "http://localhost:3006/";
-const instance = axios.create({ baseURL });
-
-export const API = {
-    getItems: () => {
-        return instance.get(`item`).then(response => response.data.content);
-    },
-    getItem: (userId) => {
-        return instance.get("item/" + userId).then(response => response.data.content);
-    },
-
-       getPicture: (path) => {
-           return instance.get(path, {
-               responseType: 'blob'
-           }).then(response => window.URL.createObjectURL(new Blob([response.data])));
-       },
-} */
