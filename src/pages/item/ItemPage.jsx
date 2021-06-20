@@ -1,56 +1,44 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import { API, baseURL } from "../../api/api";
-import { withRouter } from 'react-router-dom';
+import { useParams, withRouter } from 'react-router-dom';
 import AddToCart from "../../сomponents/add-to-cart/AddToCart";
 import s from "./index.module.scss";
 
-class ItemCardPage extends Component {
-    state = {
-        item: null,
-    }
+const ItemCardPage = () => {
 
-    setItem = (newItem) => {
-        this.setState(() => {
-            return { item: newItem, }
-        });
-    }
+    const [item, setItem] = useState(null);
 
-    componentDidMount() {
-        const userId = this.props.match.params.userId;
+    const params = useParams();
+
+    useEffect(() => {
+        const userId = params.userId;
         if (userId) {
             API.getItem(userId).then(response => {
-                this.setItem(response);
-
+                setItem(response);
             })
         }
-    }
+    }, [params]);
 
-    render() {
-        return <>{this.state.item && <div className={s.body}>
-            <div className={s.imgBlock}>
-                {this.state.item.picture
-                    ? <img src={baseURL + this.state.item.picture.path} alt={this.state.item.picture.alt} />
-                    : "нет картинки"
-                }
-            </div>
-            <div className={s.description}>
-                <h2>{this.state.item.name}</h2>
-                <p>{this.state.item.info}</p>
-                <h3>{this.state.item.description}</h3>
-                <p>{this.state.item.details}</p>
 
-                <AddToCart price={this.state.item.price} like={this.state.item.like} />
-            </div>
+
+    return <>{item && <div className={s.body}>
+        <div className={s.imgBlock}>
+            {item.picture
+                ? <img src={baseURL + item.picture.path} alt={item.picture.alt} />
+                : "нет картинки"
+            }
         </div>
+        <div className={s.description}>
+            <h2>{item.name}</h2>
+            <p>{item.info}</p>
+            <h3>{item.description}</h3>
+            <p>{item.details}</p>
 
-        }</>
+            <AddToCart price={item.price} like={item.like} />
+        </div>
+    </div>
 
+    }</>
 
-
-
-
-
-    }
 }
-
 export default withRouter(ItemCardPage);

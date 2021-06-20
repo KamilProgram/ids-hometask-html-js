@@ -1,49 +1,40 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import { API, baseURL } from "../../api/api";
-import { withRouter } from 'react-router-dom';
+import { useLocation, withRouter } from 'react-router-dom';
 import s from "./index.module.scss";
 import ItemPreview from "../../сomponents/Item-preview/ItemPreview";
 
-class CatalogPage extends Component {
-    state = {
-        items: null,
-    }
+const CatalogPage = () => {
 
-    setItems = (newItems) => {
-        this.setState(() => {
-            return { items: newItems, }
-        });
-    }
+    const [items, setItems] = useState(null);
 
-    componentDidMount() {
+    useEffect(() => {
         API.getItems().then(response => {
-            this.setItems(response);
+            setItems(response);
         });
+    }, []);
+
+    const location = useLocation();
+
+    const getSearchParams = () => {
+        return decodeURIComponent(location.search.slice(1));
     }
 
-    getSearchParams = () => {
-        let searchParam = this.props.location.search;
-        return decodeURIComponent(searchParam.slice(1));
-    }
 
-    render() {
-        let items = this.state.items;
-        const searchParam = this.getSearchParams();
+    let reg = new RegExp(getSearchParams(), 'i');
+    let hasItems = false;
 
-        if (searchParam && items) {
-            let reg = new RegExp(searchParam, 'i');
-            items = items.filter(item => reg.test(item.name));
+    return <section className={s.catalog}>
+        {items && items.map(item => {
+            if (reg.test(item.name)) {
+                hasItems = true;
+                return <ItemPreview key={item.id} baseUrl={baseURL} {...item} />
+            } else return null;
+        })
         }
+        {!hasItems && "No products found"}
+    </section>
 
-        return <section className={s.catalog}>
-            {items && items.length ? (
-                items.map(item => {
-                    return <ItemPreview key={item.id} baseUrl={baseURL} {...item} />
-                })
-            ) : "Items not found"
-            }
-        </section>
-    }
 }
 
 export default withRouter(CatalogPage);

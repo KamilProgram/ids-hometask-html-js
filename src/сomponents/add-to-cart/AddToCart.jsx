@@ -8,20 +8,18 @@ const AddToCart = ({ price, like }) => {
 
     const addCount = () => {
         if (count < 100) {
-            setCount(count + 1);
+            setCount(Number(count) + 1);
         }
     }
 
     const subCount = () => {
         if (count > 0) {
-            setCount(count - 1);
+            setCount(Number(count) - 1);
         };
     }
 
-
-    const onChangeCount = (e) => {
-        e.preventDefault();
-        this.setCount(e.target.value);
+    const onChangeCount = (value) => {
+        if (!isNaN(value)) setCount(value);
     }
 
     return <div className={s.body}>
@@ -39,7 +37,7 @@ const AddToCart = ({ price, like }) => {
                 </svg>
             </button>
 
-            <input onChange={e => onChangeCount(e)} id="countValue" type="text" value={count} />
+            <input onChange={e => onChangeCount(e.target.value)} id="countValue" type="text" value={count} />
 
             <button onClick={() => addCount()} className={s.plusBtn} >
                 <svg>
