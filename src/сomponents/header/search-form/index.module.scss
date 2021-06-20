@@ -1,0 +1,58 @@
+$break-lg: 1023px;
+$break-sm: 767px;
+
+.search {
+    flex: 0 1 300px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    position: relative;
+
+    button {
+        order: 1;
+        margin-right: 8px;
+        background-color: transparent;
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: #323232;
+        }
+
+        transition: fill 0.3s ease;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: #e97f03;
+
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    input {
+        order: 2;
+        width: 100%;
+
+        &:focus + button {
+            /*  background: url("/assets/icons/search_active.svg") center no-repeat; */
+            svg {
+                fill: #e97f03;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    @media (max-width: $break-lg) {
+        flex: 0 1 230px;
+    }
+
+    @media (max-width: $break-sm) {
+        flex: 0 1 200px;
+    }
+}
