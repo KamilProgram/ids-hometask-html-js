@@ -12,7 +12,7 @@ const LayoutMain = () => {
         <Switch>
             <Route path='/catalog/:userId' render={() => <ProductPage />} />
             <Route path='/catalog/' render={() => <CatalogPage />} />
-            <Redirect from="/" to="/catalog" />
+            <Redirect exact from="/" to="/catalog" />
             <Route path='*' render={() => <div>404 not found</div>} />
         </Switch>
     </div>

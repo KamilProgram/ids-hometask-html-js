@@ -1,3 +1,5 @@
+> Для работы необходим mock сервер (рекомендуется mackoon). Файл конфигурации `mock/mock.json`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

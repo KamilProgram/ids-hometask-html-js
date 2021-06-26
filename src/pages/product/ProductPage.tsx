@@ -19,7 +19,7 @@ const ProductPage = () => {
     if (userId) {
       product__getProducts(userId);
     }
-  }, [params.userId, product__getProducts]);
+  }, []);
 
   const history = useHistory()
 

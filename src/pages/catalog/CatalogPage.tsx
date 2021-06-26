@@ -12,7 +12,7 @@ const CatalogPage = () => {
 
     useEffect(() => {
         catalog__getProducts();
-    }, [catalog__getProducts]);
+    }, []);
 
     const location = useLocation();
 
